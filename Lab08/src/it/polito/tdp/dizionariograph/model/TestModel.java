@@ -1,5 +1,6 @@
 package it.polito.tdp.dizionariograph.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestModel {
@@ -8,6 +9,17 @@ public class TestModel {
 		
 		Model model = new Model();
 		
+		model.createGraph(3);
+		
+		List<String> tmp = new ArrayList<>(model.displayNeighbours("tre"));
+		
+		for(String s : tmp) {
+			System.out.println(s);
+		}
+		
+		System.out.println(model.gradoMax());
+		
+		/*
 		model.createGraph(4);
 		System.out.println(String.format("**Grafo creato**\n"));
 		
@@ -16,6 +28,8 @@ public class TestModel {
 		
 		System.out.println("Cerco il vertice con grado massimo...");
 		System.out.println(model.findMaxDegree());
+		
+		*/
 	}
 
 }

@@ -34,5 +34,32 @@ public class WordDAO {
 			throw new RuntimeException("Error Connection Database");
 		}
 	}
+	
+	public boolean isCorretta(String parola) {
+
+		String sql = "SELECT nome FROM parola WHERE nome=?";
+		
+
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setString(1, parola);
+			ResultSet res = st.executeQuery();
+
+			if(res.next()) {
+				conn.close();
+				return true;
+			}else {
+				conn.close();
+				return false;
+			}
+
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Error Connection Database");
+		}
+	}
 
 }
