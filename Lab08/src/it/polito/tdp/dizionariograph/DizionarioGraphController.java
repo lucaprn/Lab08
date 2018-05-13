@@ -60,8 +60,8 @@ public class DizionarioGraphController {
     	try {
     		String parola = this.txtParola.getText();
     		int numero = Integer.parseInt(this.txtNumero.getText());
-    		if(parola.length()!=numero) {
-    			txtResult.appendText("\nERRORE!!INSERISCI PAROLA CON STESSA LUNGHEZZA DICHIARATA\n");
+    		if(parola.length()!=numero || !model.presente(parola)) {
+    			txtResult.appendText("\nERRORE!!\n");
     		}else {
     			
     			for(String s : model.displayNeighbours(parola) ) {

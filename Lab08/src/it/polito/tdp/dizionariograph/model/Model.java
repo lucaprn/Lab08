@@ -75,7 +75,9 @@ public class Model {
 	}
 	
 	
-	
+	public boolean presente(String parola) {
+		return dao.isCorretta(parola);
+	}
 	public int findMaxDegree() {
 		System.err.println("findMaxDegree -- TODO");
 		return -1;
